@@ -1,5 +1,10 @@
 import devprocess
 
-result = devprocess.add_numbers(5, 5)
+def main():
+    result = devprocess.hello_world()
+    print(result)   
 
-print(result)
+if __name__ == "__main__":
+    main()
+    devprocess.hello_world()
+    
