@@ -1,8 +1,8 @@
-from devprocess import hello_world
+from devprocess import echo_value
 
 def main():
-    hello_world("Python Developer")
-    hello_world("C++ Developer")
+    print(echo_value("Hello, world!"))
+    print(echo_value(5))
 
 if __name__ == "__main__":
     main()
