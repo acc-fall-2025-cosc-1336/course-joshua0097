@@ -1,10 +1,8 @@
-import devprocess
+from devprocess import hello_world
 
 def main():
-    result = devprocess.hello_world()
-    print(result)   
+    hello_world("Python Developer")
+    hello_world("C++ Developer")
 
 if __name__ == "__main__":
     main()
-    devprocess.hello_world()
-    
