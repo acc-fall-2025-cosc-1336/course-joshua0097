@@ -1,3 +1,3 @@
-def multiply_numbers(a, b):
-    return a * b
+def multiply_numbers(num1, num2):
+    return num1 * num2
 
