@@ -1,10 +1,19 @@
-from output import multiply_numbers
+from output import get_sales_tax_amount, get_tip_amount
+
+meal_amount = float(input("Enter the meal amount (as a decimal): "))
+tip_rate = float(input("Enter the tip rate (as a decimal): "))
+tax_rate = 6.75 / 100  # 6.75% as a decimal
 
 def main():
-    result_1 = multiply_numbers (7,7)
-    print('7 x 7 =', result_1)
-    result_2 = multiply_numbers (5,5)
-    print('5 x 5 =', result_2)
+    sales_tax_amount = get_sales_tax_amount(meal_amount, tax_rate)
+    tip_amount = get_tip_amount(meal_amount, tip_rate)
+    total_bill = meal_amount + sales_tax_amount + tip_amount
 
+    print() # Print a blank line for better readability
+    print(f"Meal Amount: ${meal_amount:.2f}")
+    print(f"Sales Tax Amount: ${sales_tax_amount:.2f}")
+    print(f"Tip Amount: ${tip_amount:.2f}")
+    print(f"Total Bill: ${total_bill:.2f}")
+    
 if __name__ == "__main__":
     main()
