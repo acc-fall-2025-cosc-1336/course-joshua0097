@@ -15,3 +15,5 @@ class Test_Config(unittest.TestCase):
         self.assertEqual(get_tip_amount(100, 0.15), 15.0)
         self.assertEqual(get_tip_amount(50, 0.20), 10.0)
         self.assertEqual(get_tip_amount(0, 0.15), 0.0)
+
+    
