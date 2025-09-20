@@ -1,5 +1,5 @@
 from decisions import get_letter_grade
-
+# This function gets the letter grade based on the numeric grade
 def main():
 
     grade = int(input("Enter your grade (0-100): "))
