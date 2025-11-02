@@ -1,10 +1,10 @@
 import unittest
 
-# The test functions are now located in src/tests/homework/h_strings/tests_strings.py
+# The test functions are now located in src/tests/homework/g_lists_and_tuples/tests_lists_and_tuples.py
 
-from tests.homework.h_strings import tests_strings
+from tests.homework.g_lists_and_tuples import tests_lists_and_tuples
 
-suite = unittest.TestLoader().loadTestsFromModule(tests_strings)
+suite = unittest.TestLoader().loadTestsFromModule(tests_lists_and_tuples)
 unittest.TextTestRunner(verbosity=2).run(suite)
 
-# updated run_tests.py for homework 6
+# updated run_tests.py for homework 7
