@@ -9,7 +9,7 @@ def main():
         if choice == "1":
             values = []
             while True:
-                val_str = input("Enter a list value (as integer):\n").strip()
+                val_str = input("Enter a list value:\n").strip()
                 try:
                     val = int(val_str)
                 except ValueError:
