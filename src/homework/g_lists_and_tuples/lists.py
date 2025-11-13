@@ -1,31 +1,45 @@
-def get_lowest_list_value(values):
+def get_p_distance(list1, list2):
     """
-    Return the lowest value from the iterable 'values' using loops.
-    Raises ValueError if 'values' is empty.
+    Calculate the p-distance between two lists of equal length.
+    
+    The p-distance is the proportion of corresponding elements that differ
+    between two sequences.
+    
+    Args:
+        list1: First list
+        list2: Second list
+    
+    Returns:
+        float: The p-distance (proportion of differing elements)
     """
-    iterator = iter(values)
-    try:
-        lowest = next(iterator)
-    except StopIteration:
-        raise ValueError("get_lowest_list_value() arg is an empty sequence")
+    if len(list1) != len(list2):
+        raise ValueError("Lists must be of equal length")
+    
+    if len(list1) == 0:
+        return 0.0
+    
+    differences = sum(1 for i in range(len(list1)) if list1[i] != list2[i])
+    return differences / len(list1)
 
-    for v in iterator:
-        if v < lowest:
-            lowest = v
-    return lowest
-
-def get_highest_list_value(values):
+def get_p_distance_matrix(list1):
     """
-    Return the highest value from the iterable 'values' using loops.
-    Raises ValueError if 'values' is empty.
+    Calculate the p-distance matrix for a collection of DNA strings.
+    
+    Args:
+        list1: A list of DNA strings (lists/sequences) of equal length
+    
+    Returns:
+        list: A 2D matrix where element [i][j] is the p-distance between
+              string i and string j
     """
-    iterator = iter(values)
-    try:
-        highest = next(iterator)
-    except StopIteration:
-        raise ValueError("get_highest_list_value() arg is an empty sequence")
-
-    for v in iterator:
-        if v > highest:
-            highest = v
-    return highest
+    if not list1:
+        return []
+    
+    n = len(list1)
+    p_distance_matrix = [[0.0 for _ in range(n)] for _ in range(n)]
+    
+    for i in range(n):
+        for j in range(n):
+            p_distance_matrix[i][j] = get_p_distance(list1[i], list1[j])
+    
+    return p_distance_matrix
