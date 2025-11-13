@@ -1,9 +1,10 @@
 import unittest
-'''
-the file in /tests/homework/b_in_proc_out/tests_in_proc_out
-has the test functions
-'''
-from tests.homework.b_in_proc_out import tests_in_proc_out
 
-suite = unittest.TestLoader().loadTestsFromModule(tests_in_proc_out)
+# The test functions are now located in src/tests/homework/g_lists_and_tuples/tests_lists_and_tuples.py
+
+from tests.homework.g_lists_and_tuples import tests_lists_and_tuples
+
+suite = unittest.TestLoader().loadTestsFromModule(tests_lists_and_tuples)
 unittest.TextTestRunner(verbosity=2).run(suite)
+
+# updated run_tests.py for homework 8, homework 7 and homework 6 was on previous run_tests.py
